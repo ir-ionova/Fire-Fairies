@@ -1,0 +1,134 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing:border-box;
+
+  text-decoration: none;
+  list-style: none;
+}
+
+:root{
+  --c1: rgb(255, 211, 175);
+  --c2: rgb(199, 152, 113);
+  --c3: rgb(160, 132, 223);
+}
+body{
+
+}
+
+section{
+  padding: 12px 6%;
+}
+
+h1{
+  color: white;
+  text-align:center;
+  padding: 18px 0;
+  font-size: 54px;
+  font-weight: lighter;
+  font-family: 'Comfortaa', 'Cormorant Infant', cursive;
+  /*
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.6)  15%, rgba(0,0,0,0) 100%);
+    background: black;
+  */
+}
+h2{
+  color: white;
+  font-size: 24px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 100;
+  text-align:center;
+}
+.block{
+  background: #000;
+  width: 100%;
+  height: 640px;
+}
+.home{
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 50%, rgba(0,0,0,0.5) 80%,#000 100%),url(../img/bg1.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.price{
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 50%, rgba(0,0,0,0.3) 80%,#000 100%),url(../img/breathers.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.study{
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.05) 0%,rgba(0,0,0,0.05) 50%, rgba(0,0,0,0.3) 80%,#000 100%),url(../img/team_edited.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.final{
+  display: flex;
+  width:100%;
+  height:400px;
+  background:#000;
+  text-align: center;
+  justify-content: center;
+}
+.img{
+  width: 400px;
+  height: 400px;
+  background-image: url(../img/masha_veyer.jpg);
+  background-position:top;
+  background-repeat: no-repeat;
+  background-size:contain;
+
+}
+
+header{
+  background: var(--c1);
+}
+nav{
+  background: var(--c2);
+}
+nav a{
+  background: var(--c3);
+}
+h1{
+  background: var(--c1);
+}
+h2{
+  background: var(--c2);
+}
+.buttons{
+  background: var(--c3);
+}
+.button1{
+  background: var(--c1);
+}
+.button2{
+  background: var(--c2);
+}
+.portfolio-item{
+  position: absolute;
+  z-index: 1;
+  width: 500px;
+  height: 500px;
+  background: var(--c1);
+}
+.portfolio-item{
+  position: relative;
+  z-index: -1;
+}
+.img-overlay{
+  position: relative;
+  z-index: 2;
+  background-color:rgba(160, 132, 223, 0.2);
+  width: 500px;
+  height: 500px;
+  padding: 15px;
+}
