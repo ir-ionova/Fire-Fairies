@@ -2,7 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing:border-box;
-
+  font-family: 'Montserrat', sans-serif;
   text-decoration: none;
   list-style: none;
 }
@@ -11,12 +11,17 @@
   --c1: rgb(255, 211, 175);
   --c2: rgb(199, 152, 113);
   --c3: rgb(160, 132, 223);
+
+  --height: 150vh;
   --bg-color: #222327;
   --text-color: #fff;
   --main-color: #29fd53;
+  --p-font: 17px;
+  --mid-font: 20px;
+  --big-font: 36px;
 }
 body{
-  font-family: 'Montserrat', sans-serif;
+
 }
 
 
@@ -24,10 +29,10 @@ body{
 h1{
   color: white;
   text-align:center;
-  padding: 18px 0;
-  font-size: 54px;
+  font-size: var(--big-font);
   font-weight: lighter;
   font-family: 'Comfortaa', 'Cormorant Infant', cursive;
+  margin: 15px 0;
   /*
   background-image: linear-gradient(to bottom, rgba(0,0,0,0.6)  15%, rgba(0,0,0,0) 100%);
     background: black;
@@ -35,16 +40,25 @@ h1{
 }
 h2{
   color: white;
-  font-size: 24px;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 100;
+  font-size: var(--mid-font);
+  font-weight: 300;
   text-align:center;
+  margin-bottom: 25px;
 }
 .block{
   background: #000;
   width: 100%;
   height: 640px;
 }
+
+.block h1{
+  color: var(--main-color);
+  font-size: var(--big-font);
+  font-weight: 800;
+
+}
+
+
 section{
   padding: 25px 12%;
   background-position: center;
@@ -54,18 +68,21 @@ section{
 }
 .home{
   width: 100%;
-  height: 100vh;
+  height: var(--height);
+  min-height: 540px;
   background-image: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.4) 80%,#000 100%),url(../img/bg1.jpg);
 
 }
 .price{
   width: 100%;
-  height: 100vh;
+  height: var(--height);
+  min-height: 540px;
   background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 50%, rgba(0,0,0,0.3) 80%,#000 100%),url(../img/breathers.jpg);
 }
 .study{
   width: 100%;
-  height: 100vh;
+  height: var(--height);
+  min-height: 540px;
   background-image: linear-gradient(to bottom, rgba(0,0,0,0.05) 0%,rgba(0,0,0,0.05) 50%, rgba(0,0,0,0.3) 80%,#000 100%),url(../img/team_edited.jpg);
 }
 .final{
@@ -75,6 +92,9 @@ section{
   background:#000;
   text-align: center;
   justify-content: center;
+}
+img{
+  display:none;
 }
 .img{
   width: 400px;
@@ -87,12 +107,13 @@ section{
 }
 
 header{
+  
   /*background: var(--c1);*/
   width: 100%;
   height:80px;
   display: flex;
   justify-content: space-between;
-  margin: 0 -12%;
+  
   align-items: center;
 }
 .logo{
@@ -101,8 +122,9 @@ header{
   align-items: center;
   font-size: 35px;
   font-weight: 500;
-  font-family: 'Montserrat', sans-serif;
   text-align:center;
+  margin-left: -12%;
+  margin-right: 24%;
 }
 .logo i{
   color: var(--main-color);
@@ -126,44 +148,62 @@ nav a{
   display: inline-block;
   margin: 0 22px;
   letter-spacing: 1px;
+  font-size: var(--p-font);
+  font-weight: 500;
 }
 .home-content{
-
-
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .home-content h1{
   background: none;
   text-transform: uppercase;
-  font-weight: 800;
+  font-weight: 700;
   text-align: left;
   line-height: 1.25;
-  margin-bottom: 0;
+  letter-spacing: 2px;
+  margin-top: 20vh;
+  font-size: 48px;
+
 }
 .home-content h2{
-  font-size: 20px;
   color: var(--main-color);
   letter-spacing: 5px;
-  font-weight: 500;
-  padding-bottom: 55px;
+  font-weight: 600;
+  font-size: var(--p-font);
+  margin-bottom: 55px;
   background: none;
   text-align: left;
 }
-h1{
-  background: var(--c1);
 
-}
-h2{
-  background: var(--c2);
-}
 .buttons{
-  background: var(--c3);
+  display: flex;
 }
 .button1{
   background: var(--c1);
+  color: var(--text-color);
+  background: var(--main-color);
+  font-size: var(--p-font);
+  font-weight: 700;
+  padding: 15px 35px;
+  border-radius: 15px;
+  border: 2px solid transparent;
 }
 .button2{
-  background: var(--c2);
+  margin-left: 20px;
+  color: var(--main-color);
+  background: transparent;
+  font-size: var(--p-font);
+  font-weight: 700;
+  padding: 15px 35px;
+  border-radius: 15px;
+  border: 2px solid var(--main-color);
+}
+.portfolio-title p{
+  color: var(--text-color);
+  font-size: var(--p-font);
 }
 .portfolio-content{
   display: grid;
@@ -178,6 +218,15 @@ h2{
   width: 100%;
 	height: 100%;
 	background: linear-gradient(rgba(0,0,0,0.1), var(--c3));
+}
+.price h2{
+  color: var(--main-color);
+
+  font-weight: 600;
+  font-size: var(--mid-font);
+
+  background: none;
+
 }
 table{
   background: var(--c1);
