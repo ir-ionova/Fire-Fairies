@@ -13,12 +13,15 @@
   --c3: rgb(160, 132, 223);
 
   --height: 150vh;
+  --light-color: rgb(202, 202, 202);
   --bg-color: #222327;
   --text-color: #fff;
   --main-color: #29fd53;
+  --small-font: 14px;
   --p-font: 17px;
   --mid-font: 20px;
   --big-font: 36px;
+  --title-tab-bg: #ffffa5;
 }
 body{
 
@@ -38,7 +41,7 @@ h1{
     background: black;
   */
 }
-h2{
+.block h2{
   color: white;
   font-size: var(--mid-font);
   font-weight: 300;
@@ -65,6 +68,9 @@ section{
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  text-align: center;
+  
+
 }
 .home{
   width: 100%;
@@ -109,11 +115,14 @@ img{
 header{
   
   /*background: var(--c1);*/
+  padding: 25px 12%;
   width: 100%;
   height:80px;
   display: flex;
   justify-content: space-between;
-  
+  position: fixed;
+  top:0;
+  z-index:1000;
   align-items: center;
 }
 .logo{
@@ -165,7 +174,8 @@ nav a{
   line-height: 1.25;
   letter-spacing: 2px;
   margin-top: 20vh;
-  font-size: 48px;
+  font-size: 54px;
+  color: var(--text-color);
 
 }
 .home-content h2{
@@ -201,50 +211,162 @@ nav a{
   border-radius: 15px;
   border: 2px solid var(--main-color);
 }
+.new-portfolio{
+  height: auto;
+}
+.video{
+  position: relative;
+  width: 500px;
+  height: 500px;
+}
+.grid{
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+}
+iframe{
+  
+  width: 500px;
+  height: 500px;
+  margin: 0 auto;
+  display: block;
+}
+.video-descriprion{
+  background-color: rgba(255,255,255,0.6);
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: flex;
+justify-content: center;
+align-items: center;
+}
+.video-descriprion h5{
+  font-size: var(--mid-font);
+}
+.video-descriprion:hover{
+
+  cursor: pointer;
+}
 .portfolio-title p{
   color: var(--text-color);
   font-size: var(--p-font);
 }
 .portfolio-content{
+  width: 900px;
   display: grid;
+  gAP: 50PX;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 0 auto;
+  justify-items: center;
+;
 }
 .portfolio-item{
-  
-  width: 200px;
-  height: 200px;
+  width: 243px;
+  height: 343px;
   background: var(--c1);
+  border: 1px solid black;
 }
 .img-overlay{
   width: 100%;
 	height: 100%;
 	background: linear-gradient(rgba(0,0,0,0.1), var(--c3));
 }
-.price h2{
+
+.price{
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+h2{
   color: var(--main-color);
-
-  font-weight: 600;
+  font-weight: 300;
   font-size: var(--mid-font);
-
   background: none;
 
 }
+
 table{
-  background: var(--c1);
+  position: relative;
+  margin: 48px auto;
+  white-space: nowrap;
+  text-shadow: var(--main-color) 0px 0px 5px;
+  color: var(--light-color);
+  background: linear-gradient(rgba(0,0,0,0) 25%, rgba(255, 255, 255, 0.5) 100%);
+  transition: 0.2s ease ;
 }
-th{
-  background:var(--c2);
+
+ th {
+  font-size: 14px;
+  font-weight: normal;
+  padding: 10px 15px;
 }
-td{
-  background:var(--c3);
+
+.tab-no-data{
+  background-image: linear-gradient(to bottom right, transparent 49%, RGBA(255,255,255, 0.8), transparent 50%);
+  background-repeat: no-repeat;
 }
+
+td {
+  padding: 10px 15px;
+
+}
+tr:first-child td,th {
+  background: rgba(255,255,255,0.2);
+}
+
+
+.price-content{
+  position: relative;
+  width: 100%;
+  text-align: center;
+  max-width: 800px;
+  min-width: 535px;
+  height: 700px;
+  background: black;
+
+}
+.price-content:before{
+  content:"";
+  position: absolute;
+  top: -20px;
+  right: -2px;
+  left: -2px;
+ bottom: -2px;
+ background: #fff;
+ z-index: -1;
+}
+td, th {
+  padding: 10px;
+  position: relative;
+
+}
+
 dt{
-  background: var(--c1);
+  display: inline;
+}
+dt::after{
+  content: " — "
 }
 dl{
-  background:var(--c2);
+  padding: 0 12px;
+  text-align: left;
+  display: grid;
+  gap: 0.7em;
+  font-size: var(--small-font);
+  color: var(--light-color);
+  line-height: 1.25;
+
+}
+.price-table-content{
+  margin: 78px 0;
 }
 dd{
-  background: var(--c3);
+
+  display:inline;
+
 }
 
 .team-content{
@@ -267,4 +389,35 @@ form{
 }
 footer p{
   background: white;
+}
+@media(max-width: 810px) {
+  table{
+    transform: scale(0.8);
+    margin: 12px 0;
+  }
+}
+@media(max-width: 1185px){
+  .portfolio-item{
+    width:337px;
+    height:477px;
+  }
+  .portfolio-content{
+    grid-template-columns: repeat(2, 1fr);
+
+  }
+  .grid{
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media(min-width: 910px) {
+  table{
+    transform: scale(1.1);
+    margin: 48px auto;
+  }
+}
+@media(min-width: 1040px) {
+  table{
+    transform: scale(1.2);
+    margin: 64px auto;
+  }
 }
